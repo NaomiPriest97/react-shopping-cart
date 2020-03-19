@@ -16,13 +16,18 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		setCart([...cart, item]);
+		
+	};
+
+	const removeItem = item => {
 		
 	};
 
 	return (
 		<div className="App">
-			<ProductContext.Provider value = {{ products, addItem }} >
-				<CartContext.Provider value = {cart}>
+			<ProductContext.Provider value = {{ products, addItem, removeItem }} >
+				<CartContext.Provider value = {{cart}}>
 					<Navigation  />
 					{/* Routes */}
 					<Route exact path="/">
